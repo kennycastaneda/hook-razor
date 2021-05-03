@@ -17,7 +17,6 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/orders", orderRouter);
-console.log("orders in app");
 
 app.use(notFound);
 app.use(errorHandler);

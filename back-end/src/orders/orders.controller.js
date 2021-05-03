@@ -55,7 +55,6 @@ async function create(req, res) {
 //   }
 
 async function list(req, res) {
-  console.log("orders in controller");
   const methodName = "list";
   req.log.debug({ __filename, methodName });
 
