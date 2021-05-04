@@ -40,11 +40,11 @@ const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
 // const hasPeople = dataHas("people");
 
 async function create(req, res) {
-  const newOrder = await OrdersService.create(req.body.data);
+   const newOrder = await OrdersService.create(req.body.data);
 
-  res.status(201).json({
-    data: newOrder[0],
-  });
+   res.status(201).json({
+      data: newOrder[0],
+   });
 }
 //   async function update(req, res) {
 //     const updatedReservation = await ReservationService.update(req.body.data);
@@ -55,17 +55,17 @@ async function create(req, res) {
 //   }
 
 async function list(req, res) {
-  const methodName = "list";
-  req.log.debug({ __filename, methodName });
+   const methodName = "list";
+   req.log.debug({ __filename, methodName });
 
-  //   const { order = null } = req.query;
-  //   const data = await OrdersService.list(order);
+   //   const { order = null } = req.query;
+   //   const data = await OrdersService.list(order);
 
-  //   res.json({ data: data });
-  res.json({ data: "Hello from Hook Razor Server" });
-  req.log.trace({ __filename, methodName, return: true, data });
+   //   res.json({ data: data });
+   res.json({ data: "Hello from Hook Razor Server... " });
+   req.log.trace({ __filename, methodName, return: true, data });
 }
 
 module.exports = {
-  list: asyncErrorBoundary(list),
+   list: asyncErrorBoundary(list),
 };
